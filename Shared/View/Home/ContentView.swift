@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = HomeViewModel(clusterManager: MockBucketDataManager())
     var body: some View {
         NavigationView {
             VStack {
-                Text("Hello World")
+                List {
+                    ForEach(viewModel.clusters) { cluster in
+                        Text(cluster.name)
+                    }
+                }
                 NavigationLink {
                     CreateClusterView()
                 } label: {
@@ -24,6 +29,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: HomeViewModel(clusterManager: MockBucketDataManager()))
     }
 }

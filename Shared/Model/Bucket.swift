@@ -7,13 +7,7 @@
 
 import Foundation
 
-protocol Bucket {
-    var name: String { get }
-    var ideas: [Idea] { get }
-}
-
-struct MockBucket: Bucket {
+struct Bucket {
     let name: String
-    
     let ideas: [Idea]
 }

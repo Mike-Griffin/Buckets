@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol Cluster {
-    var name: String { get }
-    var buckets: [Bucket] { get }
+struct Cluster: Identifiable {
+    let id = UUID()
+    let name: String
+    let buckets: [Bucket]
 }

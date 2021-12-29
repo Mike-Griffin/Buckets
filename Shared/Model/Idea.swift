@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol Idea {
-    var name: String { get }
+struct Idea {
+    let name: String
 }
