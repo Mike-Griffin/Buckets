@@ -13,7 +13,7 @@ struct ContentView: View {
             VStack {
                 Text("Hello World")
                 NavigationLink {
-                    Text("Create a Cluster")
+                    CreateClusterView()
                 } label: {
                     Text("Create a Cluster")
                 }

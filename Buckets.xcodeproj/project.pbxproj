@@ -16,6 +16,8 @@
 		7F46B379277CF5A60060C174 /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B378277CF5A60060C174 /* Bucket.swift */; };
 		7F46B37B277CF69E0060C174 /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B37A277CF69E0060C174 /* Idea.swift */; };
 		7F46B37D277CF7540060C174 /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B37C277CF7540060C174 /* Cluster.swift */; };
+		7F46B380277CF9610060C174 /* CreateClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B37F277CF9610060C174 /* CreateClusterView.swift */; };
+		7F46B383277CF9B40060C174 /* CreateClusterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B382277CF9B40060C174 /* CreateClusterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		7F46B378277CF5A60060C174 /* Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
 		7F46B37A277CF69E0060C174 /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
 		7F46B37C277CF7540060C174 /* Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
+		7F46B37F277CF9610060C174 /* CreateClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClusterView.swift; sourceTree = "<group>"; };
+		7F46B382277CF9B40060C174 /* CreateClusterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClusterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				7F46B377277CF58D0060C174 /* Model */,
+				7F46B37E277CF9440060C174 /* View */,
 				7F46B359277CF0740060C174 /* BucketsApp.swift */,
-				7F46B35A277CF0740060C174 /* ContentView.swift */,
 				7F46B35B277CF0760060C174 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -93,6 +97,24 @@
 				7F46B37A277CF69E0060C174 /* Idea.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7F46B37E277CF9440060C174 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F46B381277CF9A30060C174 /* CreateCluster */,
+				7F46B35A277CF0740060C174 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7F46B381277CF9A30060C174 /* CreateCluster */ = {
+			isa = PBXGroup;
+			children = (
+				7F46B382277CF9B40060C174 /* CreateClusterViewModel.swift */,
+				7F46B37F277CF9610060C174 /* CreateClusterView.swift */,
+			);
+			path = CreateCluster;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +217,8 @@
 			files = (
 				7F46B37B277CF69E0060C174 /* Idea.swift in Sources */,
 				7F46B379277CF5A60060C174 /* Bucket.swift in Sources */,
+				7F46B383277CF9B40060C174 /* CreateClusterViewModel.swift in Sources */,
+				7F46B380277CF9610060C174 /* CreateClusterView.swift in Sources */,
 				7F46B36B277CF0760060C174 /* ContentView.swift in Sources */,
 				7F46B369277CF0760060C174 /* BucketsApp.swift in Sources */,
 				7F46B37D277CF7540060C174 /* Cluster.swift in Sources */,
