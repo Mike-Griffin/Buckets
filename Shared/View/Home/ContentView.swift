@@ -14,7 +14,11 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(viewModel.clusters) { cluster in
-                        Text(cluster.name)
+                        NavigationLink {
+                            ViewClusterView(viewModel: ViewClusterViewModel(cluster: cluster))
+                        } label: {
+                            Text(cluster.name)
+                        }
                     }
                 }
                 NavigationLink {

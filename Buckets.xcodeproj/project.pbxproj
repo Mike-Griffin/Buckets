@@ -22,6 +22,9 @@
 		7F46B389277D09980060C174 /* BucketDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B388277D09980060C174 /* BucketDataManager.swift */; };
 		7F46B38B277D09D30060C174 /* MockBucketDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B38A277D09D30060C174 /* MockBucketDataManager.swift */; };
 		7F46B38D277D0B460060C174 /* JSONBucketDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B38C277D0B460060C174 /* JSONBucketDataManager.swift */; };
+		7F46B390277E8ACD0060C174 /* ViewClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B38F277E8ACD0060C174 /* ViewClusterView.swift */; };
+		7F46B392277E8AFA0060C174 /* ViewClusterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B391277E8AFA0060C174 /* ViewClusterViewModel.swift */; };
+		7F46B394277E8B7E0060C174 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B393277E8B7E0060C174 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		7F46B388277D09980060C174 /* BucketDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketDataManager.swift; sourceTree = "<group>"; };
 		7F46B38A277D09D30060C174 /* MockBucketDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBucketDataManager.swift; sourceTree = "<group>"; };
 		7F46B38C277D0B460060C174 /* JSONBucketDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONBucketDataManager.swift; sourceTree = "<group>"; };
+		7F46B38F277E8ACD0060C174 /* ViewClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewClusterView.swift; sourceTree = "<group>"; };
+		7F46B391277E8AFA0060C174 /* ViewClusterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewClusterViewModel.swift; sourceTree = "<group>"; };
+		7F46B393277E8B7E0060C174 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 				7F46B37C277CF7540060C174 /* Cluster.swift */,
 				7F46B378277CF5A60060C174 /* Bucket.swift */,
 				7F46B37A277CF69E0060C174 /* Idea.swift */,
+				7F46B393277E8B7E0060C174 /* MockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 			children = (
 				7F46B384277D08CC0060C174 /* Home */,
 				7F46B381277CF9A30060C174 /* CreateCluster */,
+				7F46B38E277E8AA10060C174 /* ViewCluster */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +151,15 @@
 				7F46B38C277D0B460060C174 /* JSONBucketDataManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7F46B38E277E8AA10060C174 /* ViewCluster */ = {
+			isa = PBXGroup;
+			children = (
+				7F46B391277E8AFA0060C174 /* ViewClusterViewModel.swift */,
+				7F46B38F277E8ACD0060C174 /* ViewClusterView.swift */,
+			);
+			path = ViewCluster;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,9 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F46B392277E8AFA0060C174 /* ViewClusterViewModel.swift in Sources */,
+				7F46B390277E8ACD0060C174 /* ViewClusterView.swift in Sources */,
 				7F46B37B277CF69E0060C174 /* Idea.swift in Sources */,
 				7F46B379277CF5A60060C174 /* Bucket.swift in Sources */,
 				7F46B383277CF9B40060C174 /* CreateClusterViewModel.swift in Sources */,
+				7F46B394277E8B7E0060C174 /* MockData.swift in Sources */,
 				7F46B38B277D09D30060C174 /* MockBucketDataManager.swift in Sources */,
 				7F46B38D277D0B460060C174 /* JSONBucketDataManager.swift in Sources */,
 				7F46B386277D08E70060C174 /* HomeViewModel.swift in Sources */,
