@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Bucket {
+struct Bucket: Identifiable {
+    let id = UUID()
     let name: String
     let ideas: [Idea]
 }
