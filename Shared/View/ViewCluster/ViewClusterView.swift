@@ -18,11 +18,7 @@ struct ViewClusterView: View {
             Spacer()
             LazyVGrid(columns: columns) {
                 ForEach(viewModel.cluster.buckets) { bucket in
-                    VStack {
-                        Text(bucket.name)
-                        Text("\(bucket.ideas.count) ideas")
-                    }
-                    .padding()
+                        BucketPreviewView(bucket: bucket)
                 }
             }
             Spacer()
