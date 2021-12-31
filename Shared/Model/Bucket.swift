@@ -11,6 +11,7 @@ import SwiftUI
 private enum Colors: String {
     case red
     case green
+    case blue
 }
 
 struct Bucket: Identifiable {
@@ -32,6 +33,8 @@ extension Bucket {
                 return .red
             case .green:
                 return .green
+            case .blue:
+                return .blue
             }
         }
     }
