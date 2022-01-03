@@ -14,15 +14,34 @@ struct ViewClusterView: View {
         Array(repeating: .init(.flexible()), count: 2)
         
         VStack {
-            Text(viewModel.cluster.name)
+            ZStack {
+                Text(viewModel.cluster.name)
+                    .font(.title)
+                    .fontWeight(.bold)
+                HStack {
+                    Spacer()
+                Button {
+                    print("pressed add")
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .resizable()
+                        .frame(width: 36, height: 36)
+                        .tint(.primary)
+                        .padding(.horizontal)
+
+                }
+                }
+            }
             Spacer()
             LazyVGrid(columns: columns) {
                 ForEach(viewModel.cluster.buckets) { bucket in
-                        BucketPreviewView(bucket: bucket)
+                    BucketPreviewView(bucket: bucket)
                 }
             }
             Spacer()
         }
+//        .navigationTitle(viewModel.cluster.name)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
