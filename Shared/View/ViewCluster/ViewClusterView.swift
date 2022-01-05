@@ -20,8 +20,13 @@ struct ViewClusterView: View {
                     .fontWeight(.bold)
                 HStack {
                     Spacer()
-                Button {
-                    print("pressed add")
+                Menu {
+                    Button("Create Bucket") {
+                        print("do it")
+                    }
+                    Button("Create Idea") {
+                        print("do it idea version")
+                    }
                 } label: {
                     Image(systemName: "plus.circle")
                         .resizable()
