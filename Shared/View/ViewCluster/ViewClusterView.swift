@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ViewClusterView: View {
     @StateObject var viewModel = ViewClusterViewModel(clusterManager: MockBucketDataManager(), cluster: MockData.cluster1)
-    @State var width: CGFloat = 0
+    @State var screenWidth: CGFloat = 0
     var body: some View {
         let columns: [GridItem] =
         Array(repeating: .init(.flexible()), count: 2)
@@ -60,12 +60,12 @@ struct ViewClusterView: View {
                         }
 
                     }
-                    .frame(width: width, height: width)
-                    .background(.teal)
+                    .frame(width: screenWidth, height: screenWidth * 0.8)
+                    .background(.white)
                 }
             }
         }
-        .readSize { width = $0.width }
+        .readSize { screenWidth = $0.width }
         //        .navigationTitle(viewModel.cluster.name)
         .navigationBarTitleDisplayMode(.inline)
     }
