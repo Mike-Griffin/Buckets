@@ -10,5 +10,5 @@ import Foundation
 struct Cluster: Identifiable {
     let id = UUID()
     let name: String
-    let buckets: [Bucket]
+    var buckets: [Bucket]
 }

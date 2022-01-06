@@ -6,10 +6,10 @@
 //
 
 import Foundation
-
-struct JSONBucketDataManager: BucketDataManager {
-    func getClusters() -> [Cluster] {
-        print("to do")
-        return []
-    }
-}
+//
+//struct JSONBucketDataManager: BucketDataManager {
+//    func getClusters() -> [Cluster] {
+//        print("to do")
+//        return []
+//    }
+//}

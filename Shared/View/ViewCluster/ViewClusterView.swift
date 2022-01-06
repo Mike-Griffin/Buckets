@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ViewClusterView: View {
-    @StateObject var viewModel = ViewClusterViewModel(cluster: MockData.cluster1)
+    @StateObject var viewModel = ViewClusterViewModel(clusterManager: MockBucketDataManager(), cluster: MockData.cluster1)
     var body: some View {
         let columns: [GridItem] =
         Array(repeating: .init(.flexible()), count: 2)
@@ -20,32 +20,51 @@ struct ViewClusterView: View {
                     .fontWeight(.bold)
                 HStack {
                     Spacer()
-                Menu {
-                    Button("Create Bucket") {
-                        print("do it")
+                    Menu {
+                        Button("Create Bucket") {
+                            viewModel.showNewBucketForm = true
+                        }
+                        Button("Create Idea") {
+                            print("do it idea version")
+                        }
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .resizable()
+                            .frame(width: 36, height: 36)
+                            .tint(.primary)
+                            .padding(.horizontal)
+                        
                     }
-                    Button("Create Idea") {
-                        print("do it idea version")
+                }
+            }
+            ZStack {
+                VStack {
+                    Spacer()
+                    LazyVGrid(columns: columns) {
+                        ForEach(viewModel.cluster.buckets) { bucket in
+                            BucketPreviewView(bucket: bucket)
+                        }
                     }
-                } label: {
-                    Image(systemName: "plus.circle")
-                        .resizable()
-                        .frame(width: 36, height: 36)
-                        .tint(.primary)
-                        .padding(.horizontal)
+                    Spacer()
+                }
+                if viewModel.showNewBucketForm {
+                    VStack {
+                        Text("Create Bucket")
+                        TextField("Name", text: $viewModel.bucketName)
+                        Button {
+                            viewModel.createBucket(name: viewModel.bucketName)
+                            viewModel.showNewBucketForm = false
+                        } label: {
+                            Text("Save")
+                        }
 
-                }
-                }
-            }
-            Spacer()
-            LazyVGrid(columns: columns) {
-                ForEach(viewModel.cluster.buckets) { bucket in
-                    BucketPreviewView(bucket: bucket)
+                    }
+                    .frame(width: 300, height: 300)
+                    .background(.white)
                 }
             }
-            Spacer()
         }
-//        .navigationTitle(viewModel.cluster.name)
+        //        .navigationTitle(viewModel.cluster.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

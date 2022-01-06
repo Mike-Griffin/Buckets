@@ -12,12 +12,13 @@ private enum Colors: String {
     case red
     case green
     case blue
+    case yellow
 }
 
 struct Bucket: Identifiable {
     let id = UUID()
     let name: String
-    let ideas: [Idea]
+    var ideas: [Idea]
     let color: String
 
 }
@@ -35,6 +36,8 @@ extension Bucket {
                 return .green
             case .blue:
                 return .blue
+            case .yellow:
+                return .yellow
             }
         }
     }

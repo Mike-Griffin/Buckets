@@ -143,8 +143,8 @@
 		7F46B384277D08CC0060C174 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				7F46B35A277CF0740060C174 /* ContentView.swift */,
 				7F46B385277D08E70060C174 /* HomeViewModel.swift */,
+				7F46B35A277CF0740060C174 /* ContentView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
