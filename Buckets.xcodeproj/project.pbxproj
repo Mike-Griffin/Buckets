@@ -28,6 +28,7 @@
 		7F46B396277F85A50060C174 /* BucketPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B395277F85A50060C174 /* BucketPreviewView.swift */; };
 		7F46B399277F877D0060C174 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B398277F877D0060C174 /* String+Ext.swift */; };
 		7F46B39C277F89D20060C174 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B39B277F89D20060C174 /* Constants.swift */; };
+		7F46B39E27867E2A0060C174 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B39D27867E2A0060C174 /* View+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		7F46B395277F85A50060C174 /* BucketPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketPreviewView.swift; sourceTree = "<group>"; };
 		7F46B398277F877D0060C174 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		7F46B39B277F89D20060C174 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7F46B39D27867E2A0060C174 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				7F46B398277F877D0060C174 /* String+Ext.swift */,
+				7F46B39D27867E2A0060C174 /* View+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				7F46B392277E8AFA0060C174 /* ViewClusterViewModel.swift in Sources */,
 				7F46B39C277F89D20060C174 /* Constants.swift in Sources */,
+				7F46B39E27867E2A0060C174 /* View+Ext.swift in Sources */,
 				7F46B390277E8ACD0060C174 /* ViewClusterView.swift in Sources */,
 				7F46B37B277CF69E0060C174 /* Idea.swift in Sources */,
 				7F46B396277F85A50060C174 /* BucketPreviewView.swift in Sources */,
