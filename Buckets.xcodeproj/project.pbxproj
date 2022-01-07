@@ -31,6 +31,9 @@
 		7F46B39E27867E2A0060C174 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B39D27867E2A0060C174 /* View+Ext.swift */; };
 		7F613D072787F3FF00BCFEE9 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F613D062787F3FF00BCFEE9 /* AddButtonView.swift */; };
 		7F613D092787F49000BCFEE9 /* NewBucketFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F613D082787F49000BCFEE9 /* NewBucketFormView.swift */; };
+		7F613D0B278887EA00BCFEE9 /* BucketGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F613D0A278887EA00BCFEE9 /* BucketGridItemView.swift */; };
+		7F613D0D278888AC00BCFEE9 /* IdeaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F613D0C278888AC00BCFEE9 /* IdeaListView.swift */; };
+		7F613D0F27888B2400BCFEE9 /* IdeaListPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F613D0E27888B2400BCFEE9 /* IdeaListPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		7F46B39D27867E2A0060C174 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		7F613D062787F3FF00BCFEE9 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
 		7F613D082787F49000BCFEE9 /* NewBucketFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBucketFormView.swift; sourceTree = "<group>"; };
+		7F613D0A278887EA00BCFEE9 /* BucketGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketGridItemView.swift; sourceTree = "<group>"; };
+		7F613D0C278888AC00BCFEE9 /* IdeaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaListView.swift; sourceTree = "<group>"; };
+		7F613D0E27888B2400BCFEE9 /* IdeaListPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaListPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +177,10 @@
 			children = (
 				7F46B391277E8AFA0060C174 /* ViewClusterViewModel.swift */,
 				7F46B38F277E8ACD0060C174 /* ViewClusterView.swift */,
+				7F613D0A278887EA00BCFEE9 /* BucketGridItemView.swift */,
 				7F46B395277F85A50060C174 /* BucketPreviewView.swift */,
+				7F613D0C278888AC00BCFEE9 /* IdeaListView.swift */,
+				7F613D0E27888B2400BCFEE9 /* IdeaListPreviewView.swift */,
 				7F613D082787F49000BCFEE9 /* NewBucketFormView.swift */,
 			);
 			path = ViewCluster;
@@ -307,9 +316,11 @@
 				7F46B39E27867E2A0060C174 /* View+Ext.swift in Sources */,
 				7F46B390277E8ACD0060C174 /* ViewClusterView.swift in Sources */,
 				7F46B37B277CF69E0060C174 /* Idea.swift in Sources */,
+				7F613D0F27888B2400BCFEE9 /* IdeaListPreviewView.swift in Sources */,
 				7F613D092787F49000BCFEE9 /* NewBucketFormView.swift in Sources */,
 				7F46B396277F85A50060C174 /* BucketPreviewView.swift in Sources */,
 				7F46B379277CF5A60060C174 /* Bucket.swift in Sources */,
+				7F613D0B278887EA00BCFEE9 /* BucketGridItemView.swift in Sources */,
 				7F46B383277CF9B40060C174 /* CreateClusterViewModel.swift in Sources */,
 				7F46B394277E8B7E0060C174 /* MockData.swift in Sources */,
 				7F46B38B277D09D30060C174 /* MockBucketDataManager.swift in Sources */,
@@ -318,6 +329,7 @@
 				7F613D072787F3FF00BCFEE9 /* AddButtonView.swift in Sources */,
 				7F46B380277CF9610060C174 /* CreateClusterView.swift in Sources */,
 				7F46B389277D09980060C174 /* BucketDataManager.swift in Sources */,
+				7F613D0D278888AC00BCFEE9 /* IdeaListView.swift in Sources */,
 				7F46B36B277CF0760060C174 /* ContentView.swift in Sources */,
 				7F46B369277CF0760060C174 /* BucketsApp.swift in Sources */,
 				7F46B399277F877D0060C174 /* String+Ext.swift in Sources */,

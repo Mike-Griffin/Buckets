@@ -38,7 +38,7 @@ struct ViewClusterView: View {
                     Spacer()
                     LazyVGrid(columns: columns) {
                         ForEach(viewModel.cluster.buckets) { bucket in
-                            BucketPreviewView(bucket: bucket)
+                            BucketGridItemView(bucket: bucket)
                         }
                     }
                     Spacer()
