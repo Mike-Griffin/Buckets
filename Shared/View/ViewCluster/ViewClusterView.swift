@@ -29,12 +29,7 @@ struct ViewClusterView: View {
                             print("do it idea version")
                         }
                     } label: {
-                        Image(systemName: "plus.circle")
-                            .resizable()
-                            .frame(width: 36, height: 36)
-                            .tint(.primary)
-                            .padding(.horizontal)
-                        
+                        AddButtonView()
                     }
                 }
             }
@@ -49,19 +44,7 @@ struct ViewClusterView: View {
                     Spacer()
                 }
                 if viewModel.showNewBucketForm {
-                    VStack {
-                        Text("Create Bucket")
-                        TextField("Name", text: $viewModel.bucketName)
-                        Button {
-                            viewModel.createBucket(name: viewModel.bucketName)
-                            viewModel.showNewBucketForm = false
-                        } label: {
-                            Text("Save")
-                        }
-
-                    }
-                    .frame(width: screenWidth, height: screenWidth * 0.8)
-                    .background(.white)
+                    NewBucketFormView(viewModel: viewModel, width: screenWidth)
                 }
             }
         }
@@ -76,3 +59,5 @@ struct ViewClusterView_Previews: PreviewProvider {
         ViewClusterView()
     }
 }
+
+

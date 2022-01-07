@@ -29,6 +29,8 @@
 		7F46B399277F877D0060C174 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B398277F877D0060C174 /* String+Ext.swift */; };
 		7F46B39C277F89D20060C174 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B39B277F89D20060C174 /* Constants.swift */; };
 		7F46B39E27867E2A0060C174 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B39D27867E2A0060C174 /* View+Ext.swift */; };
+		7F613D072787F3FF00BCFEE9 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F613D062787F3FF00BCFEE9 /* AddButtonView.swift */; };
+		7F613D092787F49000BCFEE9 /* NewBucketFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F613D082787F49000BCFEE9 /* NewBucketFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		7F46B398277F877D0060C174 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		7F46B39B277F89D20060C174 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7F46B39D27867E2A0060C174 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		7F613D062787F3FF00BCFEE9 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
+		7F613D082787F49000BCFEE9 /* NewBucketFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBucketFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		7F46B37E277CF9440060C174 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7F613D032787F3DE00BCFEE9 /* Shared */,
 				7F46B384277D08CC0060C174 /* Home */,
 				7F46B381277CF9A30060C174 /* CreateCluster */,
 				7F46B38E277E8AA10060C174 /* ViewCluster */,
@@ -167,6 +172,7 @@
 				7F46B391277E8AFA0060C174 /* ViewClusterViewModel.swift */,
 				7F46B38F277E8ACD0060C174 /* ViewClusterView.swift */,
 				7F46B395277F85A50060C174 /* BucketPreviewView.swift */,
+				7F613D082787F49000BCFEE9 /* NewBucketFormView.swift */,
 			);
 			path = ViewCluster;
 			sourceTree = "<group>";
@@ -188,6 +194,14 @@
 				7F46B388277D09980060C174 /* BucketDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		7F613D032787F3DE00BCFEE9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7F613D062787F3FF00BCFEE9 /* AddButtonView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +307,7 @@
 				7F46B39E27867E2A0060C174 /* View+Ext.swift in Sources */,
 				7F46B390277E8ACD0060C174 /* ViewClusterView.swift in Sources */,
 				7F46B37B277CF69E0060C174 /* Idea.swift in Sources */,
+				7F613D092787F49000BCFEE9 /* NewBucketFormView.swift in Sources */,
 				7F46B396277F85A50060C174 /* BucketPreviewView.swift in Sources */,
 				7F46B379277CF5A60060C174 /* Bucket.swift in Sources */,
 				7F46B383277CF9B40060C174 /* CreateClusterViewModel.swift in Sources */,
@@ -300,6 +315,7 @@
 				7F46B38B277D09D30060C174 /* MockBucketDataManager.swift in Sources */,
 				7F46B38D277D0B460060C174 /* JSONBucketDataManager.swift in Sources */,
 				7F46B386277D08E70060C174 /* HomeViewModel.swift in Sources */,
+				7F613D072787F3FF00BCFEE9 /* AddButtonView.swift in Sources */,
 				7F46B380277CF9610060C174 /* CreateClusterView.swift in Sources */,
 				7F46B389277D09980060C174 /* BucketDataManager.swift in Sources */,
 				7F46B36B277CF0760060C174 /* ContentView.swift in Sources */,
