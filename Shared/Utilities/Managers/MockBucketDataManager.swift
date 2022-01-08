@@ -8,6 +8,10 @@
 import Foundation
 
 struct MockBucketDataManager: BucketDataManager {
+    func createIdea(name: String) -> Idea {
+        return Idea(name: name)
+    }
+    
     func createBucket(name: String) -> Bucket {
         return Bucket(name: name, ideas: [], color: "yellow")
     }

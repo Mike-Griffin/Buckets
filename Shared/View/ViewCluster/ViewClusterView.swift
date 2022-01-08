@@ -26,7 +26,7 @@ struct ViewClusterView: View {
                             viewModel.showNewBucketForm = true
                         }
                         Button("Create Idea") {
-                            print("do it idea version")
+                            viewModel.showNewIdeaForm = true
                         }
                     } label: {
                         AddButtonView()
@@ -45,6 +45,9 @@ struct ViewClusterView: View {
                 }
                 if viewModel.showNewBucketForm {
                     NewBucketFormView(viewModel: viewModel, width: screenWidth)
+                }
+                if viewModel.showNewIdeaForm {
+                    NewIdeaFormView(viewModel: viewModel, width: screenWidth)
                 }
             }
         }
