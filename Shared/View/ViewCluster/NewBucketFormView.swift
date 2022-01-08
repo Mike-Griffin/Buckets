@@ -16,6 +16,18 @@ struct NewBucketFormView: View {
             TextField("Name", text: $viewModel.bucketName)
                 .multilineTextAlignment(.center)
                 .textFieldStyle(.roundedBorder)
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(Colors.allCases, id: \.self) { color in
+                        color.colorValue
+                            .clipShape(Circle())
+                            .onTapGesture {
+                                print("selected \(color.rawValue)")
+                            }
+                    }
+                }
+            }
+            .frame(height: width / 3)
             Button {
                 viewModel.createBucket(name: viewModel.bucketName)
                 viewModel.showNewBucketForm = false

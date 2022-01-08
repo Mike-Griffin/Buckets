@@ -8,11 +8,25 @@
 import Foundation
 import SwiftUI
 
-private enum Colors: String {
+enum Colors: String, Equatable, CaseIterable {
     case red
     case green
     case blue
     case yellow
+    
+    var colorValue: Color {
+        switch(self) {
+            
+        case .red:
+            return .red
+        case .green:
+            return .green
+        case .blue:
+            return .blue
+        case .yellow:
+            return .yellow
+        }
+    }
 }
 
 struct Bucket: Identifiable {
@@ -20,7 +34,7 @@ struct Bucket: Identifiable {
     let name: String
     var ideas: [Idea]
     let color: String
-
+    
 }
 
 extension Bucket {
