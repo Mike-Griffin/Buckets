@@ -38,7 +38,9 @@ struct ViewClusterView: View {
                     Spacer()
                     LazyVGrid(columns: columns) {
                         ForEach(viewModel.cluster.buckets) { bucket in
-                            BucketGridItemView(bucket: bucket)
+                            if(bucket.name != Bucket.emptyBucket.name || !bucket.ideas.isEmpty) {
+                                BucketGridItemView(bucket: bucket)
+                            }
                         }
                     }
                     Spacer()

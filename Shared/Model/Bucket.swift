@@ -38,6 +38,10 @@ struct Bucket: Identifiable {
 }
 
 extension Bucket {
+    static var emptyBucket = Bucket(name: "No Bucket", ideas: [], color: "white")
+}
+
+extension Bucket {
     var colorValue: Color {
         switch(Colors(rawValue: color)) {
         case .none:
