@@ -58,6 +58,9 @@ class ViewClusterViewModel: ObservableObject {
                 }
             }
         }
+        ideaName = ""
+        selectedBucketIndex = 0
+        editIdea = nil
     }
     
     func editIdeaForm(_ idea: Idea, bucket: Bucket) {
