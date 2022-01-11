@@ -15,7 +15,6 @@ class ViewClusterViewModel: ObservableObject {
     @Published var bucketName = ""
     @Published var ideaName = ""
     init(clusterManager: BucketDataManager, cluster: Cluster) {
-        print("init is called with \(cluster.name)")
         self.clusterManager = clusterManager
         self.cluster = cluster
     }
