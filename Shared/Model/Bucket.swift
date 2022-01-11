@@ -30,7 +30,6 @@ enum Colors: String, Equatable, CaseIterable {
 }
 
 struct Bucket: Identifiable {
-    
     let id = UUID()
     let name: String
     var ideas: [Idea]
