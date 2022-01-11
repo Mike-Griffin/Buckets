@@ -14,6 +14,8 @@ class ViewClusterViewModel: ObservableObject {
     @Published var showNewIdeaForm = false
     @Published var bucketName = ""
     @Published var ideaName = ""
+    @Published var selectedBucketIndex = 0
+    @Published var editIdea: Idea?
     init(clusterManager: BucketDataManager, cluster: Cluster) {
         print("init is called with \(cluster.name)")
         self.clusterManager = clusterManager
@@ -26,11 +28,23 @@ class ViewClusterViewModel: ObservableObject {
     }
     
     func createIdea(name: String, bucket: Bucket?) {
-        let newIdea = clusterManager.createIdea(name: name)
-        if let bucket = bucket {
-            if let index = cluster.buckets.firstIndex(where: { $0.id == bucket.id }) {
-                cluster.buckets[index].ideas.append(newIdea)
+        if var idea = editIdea {
+            idea.name = name
+            
+        } else {
+            let newIdea = clusterManager.createIdea(name: name)
+            if let bucket = bucket {
+                if let index = cluster.buckets.firstIndex(where: { $0.id == bucket.id }) {
+                    cluster.buckets[index].ideas.append(newIdea)
+                }
             }
         }
+    }
+    
+    func editIdeaForm(_ idea: Idea, bucket: Bucket) {
+        editIdea = idea
+        ideaName = idea.name
+        selectedBucketIndex = cluster.buckets.firstIndex(where: { $0.id == bucket.id }) ?? 0
+        showNewIdeaForm = true
     }
 }

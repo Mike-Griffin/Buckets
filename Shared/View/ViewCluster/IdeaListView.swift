@@ -11,7 +11,7 @@ struct IdeaListView: View {
     var bucket: Bucket
     var body: some View {
             ForEach(bucket.ideas) { idea in
-                IdeaListPreviewView(idea: idea)
+                IdeaListPreviewView(idea: idea, bucket: bucket)
         }
     }
 }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NewIdeaFormView: View {
     @ObservedObject var viewModel: ViewClusterViewModel
-    @State var selectedBucket = 0
     var width: CGFloat
     var body: some View {
         VStack {
@@ -17,13 +16,13 @@ struct NewIdeaFormView: View {
             TextField("Name", text: $viewModel.ideaName)
                 .multilineTextAlignment(.center)
                 .textFieldStyle(.roundedBorder)
-            Picker("Select Bucket", selection: $selectedBucket) {
+            Picker("Select Bucket", selection: $viewModel.selectedBucketIndex) {
                 ForEach(viewModel.cluster.buckets.indices, id: \.self) { index in
                     Text(viewModel.cluster.buckets[index].name)
                 }
             }
             Button {
-                viewModel.createIdea(name: viewModel.ideaName, bucket: viewModel.cluster.buckets[selectedBucket])
+                viewModel.createIdea(name: viewModel.ideaName, bucket: viewModel.cluster.buckets[viewModel.selectedBucketIndex])
                 viewModel.showNewIdeaForm = false
             } label: {
                 Text("Save")
