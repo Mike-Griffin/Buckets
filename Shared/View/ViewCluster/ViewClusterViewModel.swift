@@ -42,7 +42,7 @@ class ViewClusterViewModel: ObservableObject {
                             print("should remove at \(i)")
                             cluster.buckets[i].ideas.removeAll(where: { $0 == idea })
                         }
-                        if bucket == cluster.buckets[i] {
+                        if bucket.id == cluster.buckets[i].id {
                             print("should append at \(i)")
                             cluster.buckets[i].ideas.append(editedIdea)
                         }
