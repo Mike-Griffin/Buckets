@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Idea: Identifiable {
+struct Idea: Identifiable, Equatable {
     let id = UUID()
     var name: String
 }

@@ -29,7 +29,11 @@ enum Colors: String, Equatable, CaseIterable {
     }
 }
 
-struct Bucket: Identifiable {
+struct Bucket: Identifiable, Equatable {
+    static func == (lhs: Bucket, rhs: Bucket) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id = UUID()
     let name: String
     var ideas: [Idea]
