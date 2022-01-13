@@ -22,7 +22,7 @@ struct NewIdeaFormView: View {
                 }
             }
             Button {
-                viewModel.createIdea(name: viewModel.ideaName, bucket: viewModel.cluster.buckets[viewModel.selectedBucketIndex])
+                viewModel.saveIdea(name: viewModel.ideaName, bucket: viewModel.cluster.buckets[viewModel.selectedBucketIndex])
                 viewModel.showNewIdeaForm = false
             } label: {
                 Text("Save")

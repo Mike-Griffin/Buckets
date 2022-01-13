@@ -26,7 +26,7 @@ class ViewClusterViewModel: ObservableObject {
         cluster.buckets.append(newBucket)
     }
     
-    func createIdea(name: String, bucket: Bucket?) {
+    func saveIdea(name: String, bucket: Bucket?) {
         if let idea = editIdea {
             // need to rethink the data model here
             // I want to push all this logic to my dataManager because this is going to be handled
