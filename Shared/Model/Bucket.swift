@@ -13,6 +13,7 @@ enum Colors: String, Equatable, CaseIterable {
     case green
     case blue
     case yellow
+    case teal
     
     var colorValue: Color {
         switch(self) {
@@ -25,6 +26,8 @@ enum Colors: String, Equatable, CaseIterable {
             return .blue
         case .yellow:
             return .yellow
+        case .teal:
+            return .teal
         }
     }
 }
@@ -56,6 +59,8 @@ extension Bucket {
                 return .blue
             case .yellow:
                 return .yellow
+            case .teal:
+                return .teal
             }
         }
     }

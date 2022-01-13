@@ -22,6 +22,7 @@ struct NewBucketFormView: View {
                         color.colorValue
                             .clipShape(Circle())
                             .onTapGesture {
+                                viewModel.selectedColor = color
                                 print("selected \(color.rawValue)")
                             }
                     }
@@ -29,7 +30,7 @@ struct NewBucketFormView: View {
             }
             .frame(height: width / 3)
             Button {
-                viewModel.createBucket(name: viewModel.bucketName)
+                viewModel.createBucket(name: viewModel.bucketName, color: viewModel.selectedColor)
                 viewModel.showNewBucketForm = false
             } label: {
                 Text("Save")

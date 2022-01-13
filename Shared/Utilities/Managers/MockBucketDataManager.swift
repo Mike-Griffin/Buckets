@@ -13,8 +13,12 @@ struct MockBucketDataManager: BucketDataManager {
         return Idea(name: name)
     }
     
-    func createBucket(name: String) -> Bucket {
-        return Bucket(name: name, ideas: [], color: "yellow")
+    func createBucket(name: String, color: Colors?) -> Bucket {
+        if let color = color {
+            return Bucket(name: name, ideas: [], color: color.rawValue)
+        } else {
+            return Bucket(name: name, ideas: [], color: "white")
+        }
     }
     
     func getClusters() -> [Cluster] {

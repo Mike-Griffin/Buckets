@@ -9,7 +9,7 @@ import Foundation
 
 protocol BucketDataManager {
     func getClusters() -> [Cluster]
-    func createBucket(name: String) -> Bucket
+    func createBucket(name: String, color: Colors?) -> Bucket
     func createIdea(name: String) -> Idea
     func editIdea(_ idea: Idea, name: String, bucket: Bucket?) -> Idea
 }

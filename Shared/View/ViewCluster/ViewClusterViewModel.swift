@@ -14,6 +14,7 @@ class ViewClusterViewModel: ObservableObject {
     @Published var showNewIdeaForm = false
     @Published var bucketName = ""
     @Published var ideaName = ""
+    @Published var selectedColor: Colors?
     @Published var selectedBucketIndex = 0
     @Published var editIdea: Idea?
     init(clusterManager: BucketDataManager, cluster: Cluster) {
@@ -21,8 +22,8 @@ class ViewClusterViewModel: ObservableObject {
         self.cluster = cluster
     }
     
-    func createBucket(name: String) {
-        let newBucket = clusterManager.createBucket(name: name)
+    func createBucket(name: String, color: Colors?) {
+        let newBucket = clusterManager.createBucket(name: name, color: color)
         cluster.buckets.append(newBucket)
     }
     
