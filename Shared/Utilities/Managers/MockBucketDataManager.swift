@@ -8,6 +8,7 @@
 import Foundation
 
 struct MockBucketDataManager: BucketDataManager {
+    var clusters = [MockData.cluster1, MockData.cluster2, MockData.cluster3]
     func createIdea(name: String) -> Idea {
         return Idea(name: name)
     }
@@ -17,6 +18,12 @@ struct MockBucketDataManager: BucketDataManager {
     }
     
     func getClusters() -> [Cluster] {
-        return [MockData.cluster1, MockData.cluster2, MockData.cluster3]
+        return clusters
+    }
+    
+    func editIdea(_ idea: Idea, name: String, bucket: Bucket?) -> Idea {
+        var idea = idea
+        idea.name = name
+        return idea
     }
 }

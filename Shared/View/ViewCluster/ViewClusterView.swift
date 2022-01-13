@@ -40,6 +40,7 @@ struct ViewClusterView: View {
                         ForEach(viewModel.cluster.buckets) { bucket in
                             if(bucket.name != Bucket.emptyBucket.name || !bucket.ideas.isEmpty) {
                                 BucketGridItemView(bucket: bucket)
+                                    .environmentObject(viewModel)
                             }
                         }
                     }
