@@ -14,13 +14,12 @@ class MockClusterDataManager: ClusterDataManager {
         self.cluster = cluster
     }
     
-    func createIdea(name: String, bucket: Bucket?) -> (Idea, Bucket?) {
+    func createIdea(name: String, bucket: Bucket?) {
         let idea = Idea(name: name)
         var tempBucket = bucket
         if tempBucket != nil {
             appendIdeaToBucket(idea: idea, bucket: &tempBucket!)
         }
-        return (Idea(name: name), tempBucket)
     }
     
     func createBucket(name: String, color: Colors?) -> Bucket {
@@ -31,22 +30,20 @@ class MockClusterDataManager: ClusterDataManager {
         }
     }
     
-    func editIdea(_ idea: Idea, name: String, bucket: Bucket?) -> (Idea, Bucket?, Bucket?) {
+    func editIdea(_ idea: Idea, name: String, bucket: Bucket?) {
         var editIdea = idea
         editIdea.name = name
         // find which bucket it belongs to
         var removeBucket = findBucketForIdea(idea)
         var addBucket = bucket != nil ? bucket : cluster.buckets[0]
         if removeBucket?.id == addBucket?.id {
-            // the bucket was unchanged so only return the idea
             removeIdeaFromBucket(idea: editIdea, bucket: &addBucket)
             appendIdeaToBucket(idea: editIdea, bucket: &addBucket!)
-            return (editIdea, nil, nil)
+            return 
         }
         removeIdeaFromBucket(idea: editIdea, bucket: &removeBucket)
         // if the bucket is not set, then we are appending to the no bucket field
         appendIdeaToBucket(idea: editIdea, bucket: &addBucket!)
-        return (editIdea, removeBucket, addBucket)
     }
     
     private func findBucketForIdea(_ idea: Idea) -> Bucket? {

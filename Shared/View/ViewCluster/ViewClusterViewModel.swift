@@ -32,41 +32,11 @@ class ViewClusterViewModel: ObservableObject {
             // need to rethink the data model here
             // I want to push all this logic to my dataManager because this is going to be handled
             // on the database side. Essentially I'd want to make all the changes and then refresh
-            let (editedIdea, removeBucket, addBucket) = clusterManager.editIdea(idea, name: name, bucket: bucket)
+            clusterManager.editIdea(idea, name: name, bucket: bucket)
             cluster = clusterManager.cluster
-//            print(editedIdea)
-//            if let removeBucket = removeBucket {
-//                if let index = cluster.buckets.firstIndex(where: { $0.id == removeBucket.id }) {
-//                    cluster.buckets[index] = removeBucket
-//                }
-//            }
-//            if let addBucket = addBucket {
-//                if let index = cluster.buckets.firstIndex(where: { $0.id == addBucket.id }) {
-//                    cluster.buckets[index] = addBucket
-//                }
-//            }
-//            if let bucket = bucket {
-//                if !bucket.ideas.contains(where: { $0 == idea }) {
-//                    for i in 0 ..< cluster.buckets.count {
-//                        print("we in here \(i)")
-//                        if cluster.buckets[i].ideas.contains(where: { $0 == idea }) {
-//                            print("should remove at \(i)")
-//                            cluster.buckets[i].ideas.removeAll(where: { $0 == idea })
-//                        }
-//                        if bucket.id == cluster.buckets[i].id {
-//                            print("should append at \(i)")
-//                            cluster.buckets[i].ideas.append(editedIdea)
-//                        }
-//                    }
-//                }
-//            }
         } else {
-            let (_, editedBucket) = clusterManager.createIdea(name: name, bucket: bucket)
-            if let editedBucket = editedBucket {
-                if let index = cluster.buckets.firstIndex(where: { $0.id == editedBucket.id }) {
-                    cluster.buckets[index] = editedBucket
-                }
-            }
+            clusterManager.createIdea(name: name, bucket: bucket)
+            cluster = clusterManager.cluster
         }
         ideaName = ""
         selectedBucketIndex = 0
