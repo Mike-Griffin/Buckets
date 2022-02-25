@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct MockClusterDataManager: ClusterDataManager {
+class MockClusterDataManager: ClusterDataManager {
+    var cluster: Cluster
+    
+    init(cluster: Cluster) {
+        self.cluster = cluster
+    }
+    
     func createIdea(name: String, bucket: Bucket?) -> (Idea, Bucket?) {
         let idea = Idea(name: name)
         var tempBucket = bucket
@@ -25,20 +31,51 @@ struct MockClusterDataManager: ClusterDataManager {
         }
     }
     
-    func getClusters() -> [Cluster] {
-        return clusters
+    func editIdea(_ idea: Idea, name: String, bucket: Bucket?) -> (Idea, Bucket?, Bucket?) {
+        var editIdea = idea
+        editIdea.name = name
+        // find which bucket it belongs to
+        var removeBucket = findBucketForIdea(idea)
+        var addBucket = bucket != nil ? bucket : cluster.buckets[0]
+        if removeBucket?.id == addBucket?.id {
+            // the bucket was unchanged so only return the idea
+            removeIdeaFromBucket(idea: editIdea, bucket: &addBucket)
+            appendIdeaToBucket(idea: editIdea, bucket: &addBucket!)
+            return (editIdea, nil, nil)
+        }
+        removeIdeaFromBucket(idea: editIdea, bucket: &removeBucket)
+        // if the bucket is not set, then we are appending to the no bucket field
+        appendIdeaToBucket(idea: editIdea, bucket: &addBucket!)
+        return (editIdea, removeBucket, addBucket)
     }
     
-    func editIdea(_ idea: Idea, name: String, bucket: Bucket?, cluster: Cluster) -> (Idea, Bucket?, Bucket?) {
-        var idea = idea
-        idea.name = name
-        var removeBucket = 
-        return idea
+    private func findBucketForIdea(_ idea: Idea) -> Bucket? {
+        let foundBucket = cluster.buckets.first(where: { $0.ideas.contains(where: { $0.id == idea.id})})
+        return foundBucket
     }
     
-    func appendIdeaToBucket(idea: Idea, bucket: inout Bucket) {
+    private func appendIdeaToBucket(idea: Idea, bucket: inout Bucket) {
         var ideas = bucket.ideas
         ideas.append(idea)
         bucket.ideas = ideas
+        replaceBucket(bucket)
+    }
+    
+    private func removeIdeaFromBucket(idea: Idea, bucket: inout Bucket?) {
+        guard bucket != nil else {
+            return
+        }
+
+        guard let index = bucket!.ideas.firstIndex(where: { $0.id == idea.id }) else {
+            return
+        }
+        bucket!.ideas.remove(at: index)
+        replaceBucket(bucket!)
+    }
+    
+    private func replaceBucket(_ bucket: Bucket) {
+        if let index = cluster.buckets.firstIndex(where: { $0.id == bucket.id}) {
+            cluster.buckets[index] = bucket
+        }
     }
 }

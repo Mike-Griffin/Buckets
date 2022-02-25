@@ -8,7 +8,8 @@
 import Foundation
 
 protocol ClusterDataManager {
+    var cluster: Cluster { get set }
     func createBucket(name: String, color: Colors?) -> Bucket
     func createIdea(name: String, bucket: Bucket?) -> (Idea, Bucket?) 
-    func editIdea(_ idea: Idea, name: String, bucket: Bucket?) -> (Idea, Bucket?)
+    func editIdea(_ idea: Idea, name: String, bucket: Bucket?) -> (Idea, Bucket?, Bucket?)
 }

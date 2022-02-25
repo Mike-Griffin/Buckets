@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol NetworkManager {
+    func getClusters() -> [Cluster]
+}

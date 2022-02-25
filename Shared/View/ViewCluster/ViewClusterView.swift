@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ViewClusterView: View {
-    @StateObject var viewModel = ViewClusterViewModel(clusterManager: MockBucketDataManager(), cluster: MockData.cluster1)
+    @StateObject var viewModel = ViewClusterViewModel(clusterManager: MockClusterDataManager(cluster: MockData.cluster1))
     @State var screenWidth: CGFloat = 0
     var body: some View {
         let columns: [GridItem] =
