@@ -23,8 +23,10 @@ class ViewClusterViewModel: ObservableObject {
     }
     
     func createBucket(name: String, color: Colors?) {
-        let newBucket = clusterManager.createBucket(name: name, color: color)
+        let _ = clusterManager.createBucket(name: name, color: color)
         cluster = clusterManager.cluster
+        bucketName = ""
+        selectedColor = nil
     }
     
     func saveIdea(name: String, bucket: Bucket?) {
