@@ -37,6 +37,8 @@
 		7F613D0D278888AC00BCFEE9 /* IdeaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F613D0C278888AC00BCFEE9 /* IdeaListView.swift */; };
 		7F613D0F27888B2400BCFEE9 /* IdeaListPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F613D0E27888B2400BCFEE9 /* IdeaListPreviewView.swift */; };
 		7F613D1127894CD500BCFEE9 /* NewIdeaFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F613D1027894CD500BCFEE9 /* NewIdeaFormView.swift */; };
+		7FDE57D827C9C74D0080C69C /* JSONNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDE57D727C9C74D0080C69C /* JSONNetworkManager.swift */; };
+		7FDE57DB27C9C79B0080C69C /* clusters.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FDE57DA27C9C79B0080C69C /* clusters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		7F613D0C278888AC00BCFEE9 /* IdeaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaListView.swift; sourceTree = "<group>"; };
 		7F613D0E27888B2400BCFEE9 /* IdeaListPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaListPreviewView.swift; sourceTree = "<group>"; };
 		7F613D1027894CD500BCFEE9 /* NewIdeaFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaFormView.swift; sourceTree = "<group>"; };
+		7FDE57D727C9C74D0080C69C /* JSONNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNetworkManager.swift; sourceTree = "<group>"; };
+		7FDE57DA27C9C79B0080C69C /* clusters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = clusters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 			children = (
 				7F030E3027C86C8200EC38AE /* NetworkManager.swift */,
 				7F030E3227C86C9D00EC38AE /* MockNetworkManager.swift */,
+				7FDE57D727C9C74D0080C69C /* JSONNetworkManager.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 		7F46B353277CF0740060C174 = {
 			isa = PBXGroup;
 			children = (
+				7FDE57D927C9C76A0080C69C /* Files */,
 				7F46B358277CF0740060C174 /* Shared */,
 				7F46B367277CF0760060C174 /* macOS */,
 				7F46B361277CF0760060C174 /* Products */,
@@ -238,6 +244,14 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		7FDE57D927C9C76A0080C69C /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FDE57DA27C9C79B0080C69C /* clusters.json */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FDE57DB27C9C79B0080C69C /* clusters.json in Resources */,
 				7F46B36D277CF0760060C174 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +368,7 @@
 				7F030E3327C86C9D00EC38AE /* MockNetworkManager.swift in Sources */,
 				7F46B386277D08E70060C174 /* HomeViewModel.swift in Sources */,
 				7F613D072787F3FF00BCFEE9 /* AddButtonView.swift in Sources */,
+				7FDE57D827C9C74D0080C69C /* JSONNetworkManager.swift in Sources */,
 				7F46B380277CF9610060C174 /* CreateClusterView.swift in Sources */,
 				7F46B389277D09980060C174 /* ClusterDataManager.swift in Sources */,
 				7F613D0D278888AC00BCFEE9 /* IdeaListView.swift in Sources */,

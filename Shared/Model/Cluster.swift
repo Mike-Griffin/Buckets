@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Cluster: Identifiable {
+struct Cluster: Codable, Identifiable {
     let id = UUID()
     let name: String
     var buckets: [Bucket]

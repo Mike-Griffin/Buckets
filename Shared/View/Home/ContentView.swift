@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = HomeViewModel(clusterManager: MockNetworkManager())
+    @StateObject var viewModel = HomeViewModel(clusterManager: JSONNetworkManager())
     var body: some View {
         NavigationView {
             VStack {
