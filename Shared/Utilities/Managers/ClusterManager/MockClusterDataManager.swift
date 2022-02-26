@@ -23,11 +23,12 @@ class MockClusterDataManager: ClusterDataManager {
     }
     
     func createBucket(name: String, color: Colors?) -> Bucket {
-        if let color = color {
-            return Bucket(name: name, ideas: [], color: color.rawValue)
-        } else {
-            return Bucket(name: name, ideas: [], color: "white")
-        }
+        let bucket = color != nil
+            ? Bucket(name: name, ideas: [], color: color!.rawValue)
+            : Bucket(name: name, ideas: [], color: "white")
+
+        cluster.buckets.append(bucket)
+        return bucket
     }
     
     func editIdea(_ idea: Idea, name: String, bucket: Bucket?) {
