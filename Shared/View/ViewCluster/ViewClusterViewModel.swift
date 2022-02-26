@@ -8,7 +8,7 @@
 import Foundation
 
 class ViewClusterViewModel: ObservableObject {
-    var clusterManager: BucketDataManager
+    var clusterManager: ClusterDataManager
     @Published var cluster: Cluster
     @Published var showNewBucketForm = false
     @Published var showNewIdeaForm = false
@@ -17,14 +17,16 @@ class ViewClusterViewModel: ObservableObject {
     @Published var selectedColor: Colors?
     @Published var selectedBucketIndex = 0
     @Published var editIdea: Idea?
-    init(clusterManager: BucketDataManager, cluster: Cluster) {
+    init(clusterManager: ClusterDataManager) {
         self.clusterManager = clusterManager
-        self.cluster = cluster
+        self.cluster = clusterManager.cluster
     }
     
     func createBucket(name: String, color: Colors?) {
-        let newBucket = clusterManager.createBucket(name: name, color: color)
-        cluster.buckets.append(newBucket)
+        let _ = clusterManager.createBucket(name: name, color: color)
+        cluster = clusterManager.cluster
+        bucketName = ""
+        selectedColor = nil
     }
     
     func saveIdea(name: String, bucket: Bucket?) {
@@ -32,35 +34,16 @@ class ViewClusterViewModel: ObservableObject {
             // need to rethink the data model here
             // I want to push all this logic to my dataManager because this is going to be handled
             // on the database side. Essentially I'd want to make all the changes and then refresh
-            let editedIdea = clusterManager.editIdea(idea, name: name, bucket: bucket)
-            print(editedIdea)
-            if let bucket = bucket {
-                if !bucket.ideas.contains(where: { $0 == idea }) {
-                    for i in 0 ..< cluster.buckets.count {
-                        print("we in here \(i)")
-                        if cluster.buckets[i].ideas.contains(where: { $0 == idea }) {
-                            print("should remove at \(i)")
-                            cluster.buckets[i].ideas.removeAll(where: { $0 == idea })
-                        }
-                        if bucket.id == cluster.buckets[i].id {
-                            print("should append at \(i)")
-                            cluster.buckets[i].ideas.append(editedIdea)
-                        }
-                    }
-                }
-            }
+            clusterManager.editIdea(idea, name: name, bucket: bucket)
+            cluster = clusterManager.cluster
         } else {
-            let newIdea = clusterManager.createIdea(name: name)
-            print(newIdea)
-            if let bucket = bucket {
-                if let index = cluster.buckets.firstIndex(where: { $0.id == bucket.id }) {
-                    cluster.buckets[index].ideas.append(newIdea)
-                }
-            }
+            clusterManager.createIdea(name: name, bucket: bucket)
+            cluster = clusterManager.cluster
         }
         ideaName = ""
         selectedBucketIndex = 0
         editIdea = nil
+        clusterManager.cluster = cluster
     }
     
     func editIdeaForm(_ idea: Idea, bucket: Bucket) {

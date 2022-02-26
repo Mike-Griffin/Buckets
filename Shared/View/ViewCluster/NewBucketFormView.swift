@@ -44,6 +44,6 @@ struct NewBucketFormView: View {
 
 struct NewBucketFormView_Previews: PreviewProvider {
     static var previews: some View {
-        NewBucketFormView(viewModel: ViewClusterViewModel(clusterManager: MockBucketDataManager(), cluster: MockData.cluster1), width: 300)
+        NewBucketFormView(viewModel: ViewClusterViewModel(clusterManager: MockClusterDataManager(cluster: MockData.cluster1)), width: 300)
     }
 }

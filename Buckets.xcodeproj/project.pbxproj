@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F030E3127C86C8200EC38AE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F030E3027C86C8200EC38AE /* NetworkManager.swift */; };
+		7F030E3327C86C9D00EC38AE /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F030E3227C86C9D00EC38AE /* MockNetworkManager.swift */; };
 		7F46B369277CF0760060C174 /* BucketsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B359277CF0740060C174 /* BucketsApp.swift */; };
 		7F46B36A277CF0760060C174 /* BucketsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B359277CF0740060C174 /* BucketsApp.swift */; };
 		7F46B36B277CF0760060C174 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B35A277CF0740060C174 /* ContentView.swift */; };
@@ -19,8 +21,8 @@
 		7F46B380277CF9610060C174 /* CreateClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B37F277CF9610060C174 /* CreateClusterView.swift */; };
 		7F46B383277CF9B40060C174 /* CreateClusterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B382277CF9B40060C174 /* CreateClusterViewModel.swift */; };
 		7F46B386277D08E70060C174 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B385277D08E70060C174 /* HomeViewModel.swift */; };
-		7F46B389277D09980060C174 /* BucketDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B388277D09980060C174 /* BucketDataManager.swift */; };
-		7F46B38B277D09D30060C174 /* MockBucketDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B38A277D09D30060C174 /* MockBucketDataManager.swift */; };
+		7F46B389277D09980060C174 /* ClusterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B388277D09980060C174 /* ClusterDataManager.swift */; };
+		7F46B38B277D09D30060C174 /* MockClusterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B38A277D09D30060C174 /* MockClusterDataManager.swift */; };
 		7F46B38D277D0B460060C174 /* JSONBucketDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B38C277D0B460060C174 /* JSONBucketDataManager.swift */; };
 		7F46B390277E8ACD0060C174 /* ViewClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B38F277E8ACD0060C174 /* ViewClusterView.swift */; };
 		7F46B392277E8AFA0060C174 /* ViewClusterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B391277E8AFA0060C174 /* ViewClusterViewModel.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F030E3027C86C8200EC38AE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7F030E3227C86C9D00EC38AE /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		7F46B359277CF0740060C174 /* BucketsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketsApp.swift; sourceTree = "<group>"; };
 		7F46B35A277CF0740060C174 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7F46B35B277CF0760060C174 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,8 +54,8 @@
 		7F46B37F277CF9610060C174 /* CreateClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClusterView.swift; sourceTree = "<group>"; };
 		7F46B382277CF9B40060C174 /* CreateClusterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClusterViewModel.swift; sourceTree = "<group>"; };
 		7F46B385277D08E70060C174 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		7F46B388277D09980060C174 /* BucketDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketDataManager.swift; sourceTree = "<group>"; };
-		7F46B38A277D09D30060C174 /* MockBucketDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBucketDataManager.swift; sourceTree = "<group>"; };
+		7F46B388277D09980060C174 /* ClusterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterDataManager.swift; sourceTree = "<group>"; };
+		7F46B38A277D09D30060C174 /* MockClusterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClusterDataManager.swift; sourceTree = "<group>"; };
 		7F46B38C277D0B460060C174 /* JSONBucketDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONBucketDataManager.swift; sourceTree = "<group>"; };
 		7F46B38F277E8ACD0060C174 /* ViewClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewClusterView.swift; sourceTree = "<group>"; };
 		7F46B391277E8AFA0060C174 /* ViewClusterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewClusterViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +90,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F030E2E27C86C2100EC38AE /* ClusterManager */ = {
+			isa = PBXGroup;
+			children = (
+				7F46B388277D09980060C174 /* ClusterDataManager.swift */,
+				7F46B38C277D0B460060C174 /* JSONBucketDataManager.swift */,
+				7F46B38A277D09D30060C174 /* MockClusterDataManager.swift */,
+			);
+			path = ClusterManager;
+			sourceTree = "<group>";
+		};
+		7F030E2F27C86C3300EC38AE /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				7F030E3027C86C8200EC38AE /* NetworkManager.swift */,
+				7F030E3227C86C9D00EC38AE /* MockNetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		7F46B353277CF0740060C174 = {
 			isa = PBXGroup;
 			children = (
@@ -201,9 +224,8 @@
 		7F46B39A277F89BD0060C174 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				7F46B38C277D0B460060C174 /* JSONBucketDataManager.swift */,
-				7F46B38A277D09D30060C174 /* MockBucketDataManager.swift */,
-				7F46B388277D09980060C174 /* BucketDataManager.swift */,
+				7F030E2F27C86C3300EC38AE /* NetworkManager */,
+				7F030E2E27C86C2100EC38AE /* ClusterManager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -326,16 +348,18 @@
 				7F613D0B278887EA00BCFEE9 /* BucketGridItemView.swift in Sources */,
 				7F46B383277CF9B40060C174 /* CreateClusterViewModel.swift in Sources */,
 				7F46B394277E8B7E0060C174 /* MockData.swift in Sources */,
-				7F46B38B277D09D30060C174 /* MockBucketDataManager.swift in Sources */,
+				7F46B38B277D09D30060C174 /* MockClusterDataManager.swift in Sources */,
 				7F46B38D277D0B460060C174 /* JSONBucketDataManager.swift in Sources */,
+				7F030E3327C86C9D00EC38AE /* MockNetworkManager.swift in Sources */,
 				7F46B386277D08E70060C174 /* HomeViewModel.swift in Sources */,
 				7F613D072787F3FF00BCFEE9 /* AddButtonView.swift in Sources */,
 				7F46B380277CF9610060C174 /* CreateClusterView.swift in Sources */,
-				7F46B389277D09980060C174 /* BucketDataManager.swift in Sources */,
+				7F46B389277D09980060C174 /* ClusterDataManager.swift in Sources */,
 				7F613D0D278888AC00BCFEE9 /* IdeaListView.swift in Sources */,
 				7F46B36B277CF0760060C174 /* ContentView.swift in Sources */,
 				7F613D1127894CD500BCFEE9 /* NewIdeaFormView.swift in Sources */,
 				7F46B369277CF0760060C174 /* BucketsApp.swift in Sources */,
+				7F030E3127C86C8200EC38AE /* NetworkManager.swift in Sources */,
 				7F46B399277F877D0060C174 /* String+Ext.swift in Sources */,
 				7F46B37D277CF7540060C174 /* Cluster.swift in Sources */,
 			);

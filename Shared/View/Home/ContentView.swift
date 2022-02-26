@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = HomeViewModel(clusterManager: MockBucketDataManager())
+    @StateObject var viewModel = HomeViewModel(clusterManager: MockNetworkManager())
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     ForEach(viewModel.clusters) { cluster in
                         NavigationLink {
-                            ViewClusterView(viewModel: ViewClusterViewModel(clusterManager: viewModel.clusterManager, cluster: cluster))
+                            ViewClusterView(viewModel: ViewClusterViewModel(clusterManager: MockClusterDataManager(cluster: cluster)))
                         } label: {
                             Text(cluster.name)
                         }
@@ -33,6 +33,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: HomeViewModel(clusterManager: MockBucketDataManager()))
+        ContentView(viewModel: HomeViewModel(clusterManager: MockNetworkManager()))
     }
 }

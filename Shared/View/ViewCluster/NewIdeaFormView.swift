@@ -35,6 +35,6 @@ struct NewIdeaFormView: View {
 
 struct NewIdeaFormView_Previews: PreviewProvider {
     static var previews: some View {
-        NewIdeaFormView(viewModel: ViewClusterViewModel(clusterManager: MockBucketDataManager(), cluster: MockData.cluster1), width: 300)
+        NewIdeaFormView(viewModel: ViewClusterViewModel(clusterManager: MockClusterDataManager(cluster: MockData.cluster1)), width: 300)
     }
 }
