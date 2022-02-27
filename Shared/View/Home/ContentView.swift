@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = HomeViewModel(clusterManager: JSONNetworkManager())
+    @StateObject var viewModel = HomeViewModel(clusterManager: JSONRootDataManager())
     var body: some View {
         NavigationView {
             VStack {
@@ -22,7 +22,7 @@ struct ContentView: View {
                     }
                 }
                 NavigationLink {
-                    CreateClusterView()
+                    CreateClusterView(viewModel: CreateClusterViewModel(dataManager: viewModel.dataManager))
                 } label: {
                     Text("Create a Cluster")
                 }
@@ -33,6 +33,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: HomeViewModel(clusterManager: MockNetworkManager()))
+        ContentView(viewModel: HomeViewModel(clusterManager: MockRootManager()))
     }
 }

@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct CreateClusterView: View {
-    @StateObject var viewModel = CreateClusterViewModel()
+    @StateObject var viewModel: CreateClusterViewModel
     var body: some View {
-        Text("Create a Cluster!!!!")
+        VStack {
+            TextField("Name", text: $viewModel.name)
+            Button {
+                viewModel.saveCluster()
+            } label: {
+                Text("Save")
+            }
+
+        }
+        .padding()
     }
 }
 
 struct CreateCluster_Previews: PreviewProvider {
     static var previews: some View {
-        CreateClusterView()
+        CreateClusterView(viewModel: CreateClusterViewModel(dataManager: MockRootManager()))
     }
 }

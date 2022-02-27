@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct MockRootManager: RootDataManager {
+    let networkManager = MockNetworkManager()
+    
+    func getClusters() -> [Cluster] {
+        return networkManager.getClusters()
+    }
+    
+    func createCluster(name: String) -> Cluster {
+        return Cluster(name: name, buckets: [])
+    }
+}

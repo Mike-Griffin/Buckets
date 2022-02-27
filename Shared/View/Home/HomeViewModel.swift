@@ -8,10 +8,10 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
-    @Published var clusterManager: NetworkManager
+    @Published var dataManager: RootDataManager
     let clusters: [Cluster]
-    init(clusterManager: NetworkManager) {
-        self.clusterManager = clusterManager
+    init(clusterManager: RootDataManager) {
+        self.dataManager = clusterManager
         self.clusters = clusterManager.getClusters()
     }
 }

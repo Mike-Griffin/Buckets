@@ -38,6 +38,12 @@ struct Bucket: Identifiable, Codable {
     var ideas: [Idea]
     let color: String
     
+//    init(id: UUID = UUID(), name: String, ideas: [Idea], color: String) {
+//        self.id = id
+//        self.name = name
+//        self.ideas = ideas
+//        self.color = color
+//    }
 }
 
 extension Bucket {

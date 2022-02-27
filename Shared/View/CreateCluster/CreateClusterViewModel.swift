@@ -8,7 +8,16 @@
 import Foundation
 
 class CreateClusterViewModel: ObservableObject {
-    init() {
+    let dataManager: RootDataManager
+    @Published var name: String = ""
+    
+    init(dataManager: RootDataManager) {
         print("create cluster vm init called")
+        self.dataManager = dataManager
+    }
+    
+    func saveCluster() {
+        let cluster = dataManager.createCluster(name: name)
+        print(cluster)
     }
 }

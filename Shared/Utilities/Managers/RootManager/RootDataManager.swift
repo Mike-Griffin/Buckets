@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol RootDataManager {
+    func getClusters() -> [Cluster]
+    func createCluster(name: String) -> Cluster
+}

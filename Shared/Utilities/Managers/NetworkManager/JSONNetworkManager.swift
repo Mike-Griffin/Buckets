@@ -9,19 +9,115 @@ import Foundation
 
 struct JSONNetworkManager: NetworkManager {
     func getClusters() -> [Cluster] {
-        if let path = Bundle.main.path(forResource: "clusters", ofType: "json") {
-            do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: path))
-                let decodedData = try JSONDecoder().decode([Cluster].self, from: data)
-                return decodedData
+        let documentDirectory = try! FileManager.default.url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        print(documentDirectory)
+        print(documentDirectory.path)
+        let clustersDirectory = documentDirectory.appendingPathComponent("clusters", isDirectory: true)
+        print(clustersDirectory)
+        if FileManager.default.fileExists(atPath: clustersDirectory.path) {
+            print("Clusters directory exists")
+            let directoryContents = try? FileManager.default.contentsOfDirectory(atPath: clustersDirectory.path)
+            var clusters: [Cluster] = []
+            for file in directoryContents ?? [] {
+                print(file)
+                do {
+                    let filePath = clustersDirectory.appendingPathComponent(file).path
+                    let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
+//                let data = try? FileManager.default.contents(atPath: clustersDirectory.appendingPathComponent(file).path)
+                let decodedFile = try JSONDecoder().decode(Cluster.self, from: data)
+                    clusters.append(decodedFile)
+                print(decodedFile)
+                } catch {
+                    print(error)
+                }
             }
-            catch {
-                print(error.localizedDescription)
-            }
-            print(path)
+            return clusters
         } else {
-            print("error getting the path")
+            print("clusters directory does not exist")
+            // read from the main bundle and write it to the clusters directory
+            if let path = Bundle.main.path(forResource: "clusters", ofType: "json") {
+                do {
+                    let data = try Data(contentsOf: URL(fileURLWithPath: path))
+                    let decodedClusters = try JSONDecoder().decode([Cluster].self, from: data)
+                    try FileManager.default.createDirectory(at: clustersDirectory, withIntermediateDirectories: false, attributes: nil)
+                    for cluster in decodedClusters {
+                        try FileManager.default.createFile(atPath: clustersDirectory.appendingPathComponent(cluster.id.uuidString).path, contents: JSONEncoder().encode(cluster), attributes: nil)
+                    }
+                    return decodedClusters
+                }
+                catch {
+                    print(error)
+                }
+                print(path)
+            } else {
+                print("error getting the path")
+            }
         }
+        //        if let idsPath = Bundle.main.path(forResource: "ids", ofType: "json") {
+        //            do {
+        //                let data = try Data(contentsOf: URL(fileURLWithPath: idsPath))
+        //                let clusterIds = try JSONDecoder().decode([String].self, from: data)
+        //                print(clusterIds)
+        //                for clusterId in clusterIds {
+        //                    print(clusterId)
+        //
+        //                }
+        //                let clusterPaths = clusterIds.compactMap({ Bundle.main.path(forResource: $0, ofType:"json")})
+        //                print(clusterPaths)
+        //                var clusters: [Cluster] = []
+        //                for path in clusterPaths {
+        //                    do {
+        //                        let data = try Data(contentsOf: URL(fileURLWithPath: path))
+        //                        let cluster = try JSONDecoder().decode(Cluster.self, from: data)
+        //                        clusters.append(cluster)
+        //                    }
+        //                    catch {
+        //                        print(error.localizedDescription)
+        //                    }
+        //                    print(clusters)
+        //                }
+        //                return clusters
+        //            } catch {
+        //                print(error.localizedDescription)
+        //            }
+        //        } else {
+        //            print("error getting the ids path")
+        //        }
+        //        let clustersPath = Bundle.main.path(forResource: nil, ofType: "json", inDirectory: "Clusters")
+        //        print(clustersPath)
+        //        if let folderPath = Bundle.main.path(forResource: "Clusters", ofType: "folder") {
+        //            print(folderPath)
+        //        } else {
+        //            print("error getting the folder path")
+        //        }
+        //
+        //        if let path = Bundle.main.path(forResource: "clusters", ofType: "json") {
+        //            do {
+        //            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+        //                let decodedData = try JSONDecoder().decode([Cluster].self, from: data)
+        //                return decodedData
+        //            }
+        //            catch {
+        //                print(error.localizedDescription)
+        //            }
+        //            print(path)
+        //        } else {
+        //            print("error getting the path")
+        //        }
         return []
+    }
+    
+    func saveCluster(cluster: Cluster) {
+        // create a new file with this cluster's id for a name
+        print(cluster.id)
+        let fileName = cluster.id.uuidString
+        let documentDirectoryUrl = try! FileManager.default.url(
+            for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true
+        )
+        let fileUrl = documentDirectoryUrl.appendingPathComponent(fileName).appendingPathExtension("json")
+        // prints the file path
+        print("File path \(fileUrl.path)")
+        // encode the cluster and write it to the file
+        // append the id to the end of the ids file
     }
 }
