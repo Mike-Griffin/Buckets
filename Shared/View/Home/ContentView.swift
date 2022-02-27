@@ -27,6 +27,9 @@ struct ContentView: View {
                     Text("Create a Cluster")
                 }
             }
+            .onAppear {
+                viewModel.fetchClusters()
+            }
         }
     }
 }

@@ -9,9 +9,15 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     @Published var dataManager: RootDataManager
-    let clusters: [Cluster]
+    @Published var clusters: [Cluster]
     init(clusterManager: RootDataManager) {
         self.dataManager = clusterManager
-        self.clusters = clusterManager.getClusters()
+        // currently setting it to empty because I have on appear calling fetch clusters
+        self.clusters = []
+    }
+    
+    func fetchClusters() {
+        print("fetching clusters...")
+        self.clusters = dataManager.getClusters()
     }
 }

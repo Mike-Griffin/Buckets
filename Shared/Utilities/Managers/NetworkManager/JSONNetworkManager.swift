@@ -10,23 +10,23 @@ import Foundation
 struct JSONNetworkManager: NetworkManager {
     func getClusters() -> [Cluster] {
         let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        print(documentDirectory)
-        print(documentDirectory.path)
+//        print(documentDirectory)
+//        print(documentDirectory.path)
         let clustersDirectory = documentDirectory.appendingPathComponent("clusters", isDirectory: true)
-        print(clustersDirectory)
+//        print(clustersDirectory)
         if FileManager.default.fileExists(atPath: clustersDirectory.path) {
-            print("Clusters directory exists")
+//            print("Clusters directory exists")
             let directoryContents = try? FileManager.default.contentsOfDirectory(atPath: clustersDirectory.path)
             var clusters: [Cluster] = []
             for file in directoryContents ?? [] {
-                print(file)
+//                print(file)
                 do {
                     let filePath = clustersDirectory.appendingPathComponent(file).path
                     let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
 //                let data = try? FileManager.default.contents(atPath: clustersDirectory.appendingPathComponent(file).path)
                 let decodedFile = try JSONDecoder().decode(Cluster.self, from: data)
                     clusters.append(decodedFile)
-                print(decodedFile)
+//                print(decodedFile)
                 } catch {
                     print(error)
                 }
