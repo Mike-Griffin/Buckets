@@ -9,7 +9,7 @@ import Foundation
 
 struct JSONNetworkManager: NetworkManager {
     func getClusters() -> [Cluster] {
-        let documentDirectory = try! FileManager.default.url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         print(documentDirectory)
         print(documentDirectory.path)
         let clustersDirectory = documentDirectory.appendingPathComponent("clusters", isDirectory: true)
@@ -114,9 +114,16 @@ struct JSONNetworkManager: NetworkManager {
         let documentDirectoryUrl = try! FileManager.default.url(
             for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true
         )
-        let fileUrl = documentDirectoryUrl.appendingPathComponent(fileName).appendingPathExtension("json")
+        let clusterDirectoryUrl = documentDirectoryUrl.appendingPathComponent("clusters")
         // prints the file path
-        print("File path \(fileUrl.path)")
+        print("File path \(clusterDirectoryUrl.path)")
+        let newFilePathUrl = clusterDirectoryUrl.appendingPathComponent(cluster.id.uuidString)
+        print(newFilePathUrl)
+        do {
+            try FileManager.default.createFile(atPath: newFilePathUrl.path, contents: JSONEncoder().encode(cluster), attributes: nil)
+        } catch {
+            print(error)
+        }
         // encode the cluster and write it to the file
         // append the id to the end of the ids file
     }
