@@ -10,23 +10,23 @@ import Foundation
 struct JSONNetworkManager: NetworkManager {
     func getClusters() -> [Cluster] {
         let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-//        print(documentDirectory)
-//        print(documentDirectory.path)
+        //        print(documentDirectory)
+        //        print(documentDirectory.path)
         let clustersDirectory = documentDirectory.appendingPathComponent("clusters", isDirectory: true)
-//        print(clustersDirectory)
+        //        print(clustersDirectory)
         if FileManager.default.fileExists(atPath: clustersDirectory.path) {
-//            print("Clusters directory exists")
+            //            print("Clusters directory exists")
             let directoryContents = try? FileManager.default.contentsOfDirectory(atPath: clustersDirectory.path)
             var clusters: [Cluster] = []
             for file in directoryContents ?? [] {
-//                print(file)
+                //                print(file)
                 do {
                     let filePath = clustersDirectory.appendingPathComponent(file).path
                     let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
-//                let data = try? FileManager.default.contents(atPath: clustersDirectory.appendingPathComponent(file).path)
-                let decodedFile = try JSONDecoder().decode(Cluster.self, from: data)
+                    //                let data = try? FileManager.default.contents(atPath: clustersDirectory.appendingPathComponent(file).path)
+                    let decodedFile = try JSONDecoder().decode(Cluster.self, from: data)
                     clusters.append(decodedFile)
-//                print(decodedFile)
+                    //                print(decodedFile)
                 } catch {
                     print(error)
                 }
@@ -110,7 +110,6 @@ struct JSONNetworkManager: NetworkManager {
     func saveCluster(cluster: Cluster) {
         // create a new file with this cluster's id for a name
         print(cluster.id)
-        let fileName = cluster.id.uuidString
         let documentDirectoryUrl = try! FileManager.default.url(
             for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true
         )
@@ -119,12 +118,20 @@ struct JSONNetworkManager: NetworkManager {
         print("File path \(clusterDirectoryUrl.path)")
         let newFilePathUrl = clusterDirectoryUrl.appendingPathComponent(cluster.id.uuidString)
         print(newFilePathUrl)
+        // TODO: Figure out how I can modify the specific part of the file
+        // instead of removing the file and writing it again
+        if(FileManager.default.fileExists(atPath: newFilePathUrl.path)) {
+            print("yes the file is here")
+            do {
+                try FileManager.default.removeItem(at: newFilePathUrl)
+            } catch {
+                print(error)
+            }
+        }
         do {
             try FileManager.default.createFile(atPath: newFilePathUrl.path, contents: JSONEncoder().encode(cluster), attributes: nil)
         } catch {
             print(error)
         }
-        // encode the cluster and write it to the file
-        // append the id to the end of the ids file
     }
 }

@@ -31,9 +31,6 @@ class ViewClusterViewModel: ObservableObject {
     
     func saveIdea(name: String, bucket: Bucket?) {
         if let idea = editIdea {
-            // need to rethink the data model here
-            // I want to push all this logic to my dataManager because this is going to be handled
-            // on the database side. Essentially I'd want to make all the changes and then refresh
             clusterManager.editIdea(idea, name: name, bucket: bucket)
             cluster = clusterManager.cluster
         } else {

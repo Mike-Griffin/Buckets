@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+enum DefaultValues {
+    static let defaultColors = "white"
+}

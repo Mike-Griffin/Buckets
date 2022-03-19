@@ -15,7 +15,7 @@ struct ContentView: View {
                 List {
                     ForEach(viewModel.clusters) { cluster in
                         NavigationLink {
-                            ViewClusterView(viewModel: ViewClusterViewModel(clusterManager: MockClusterDataManager(cluster: cluster)))
+                            ViewClusterView(viewModel: ViewClusterViewModel(clusterManager: JSONClusterDataManager(cluster: cluster)))
                         } label: {
                             Text(cluster.name)
                         }

@@ -47,7 +47,7 @@ struct Bucket: Identifiable, Codable {
 }
 
 extension Bucket {
-    static var emptyBucket = Bucket(name: "No Bucket", ideas: [], color: "white")
+    static var emptyBucket = Bucket(name: "No Bucket", ideas: [], color: DefaultValues.defaultColors)
 }
 
 extension Bucket {

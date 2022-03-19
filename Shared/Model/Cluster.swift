@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Cluster: Codable, Identifiable {
+class Cluster: Codable, Identifiable {
     let id: UUID
     let name: String
     var buckets: [Bucket]
@@ -21,7 +21,7 @@ struct Cluster: Codable, Identifiable {
     
     private enum CodingKeys : String, CodingKey { case id, name, buckets }
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)

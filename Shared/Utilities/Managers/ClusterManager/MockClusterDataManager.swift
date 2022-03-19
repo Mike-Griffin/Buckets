@@ -25,7 +25,7 @@ class MockClusterDataManager: ClusterDataManager {
     func createBucket(name: String, color: Colors?) -> Bucket {
         let bucket = color != nil
             ? Bucket(name: name, ideas: [], color: color!.rawValue)
-            : Bucket(name: name, ideas: [], color: "white")
+        : Bucket(name: name, ideas: [], color: DefaultValues.defaultColors)
 
         cluster.buckets.append(bucket)
         return bucket

@@ -13,6 +13,7 @@ class HomeViewModel: ObservableObject {
     init(clusterManager: RootDataManager) {
         self.dataManager = clusterManager
         // currently setting it to empty because I have on appear calling fetch clusters
+        // should come up with a better way to read clusters only when necessary
         self.clusters = []
     }
     
