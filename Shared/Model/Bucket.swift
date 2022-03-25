@@ -32,16 +32,22 @@ enum Colors: String, Equatable, CaseIterable {
     }
 }
 
-struct Bucket: Identifiable {
+struct Bucket: Identifiable, Codable {
     let id = UUID()
     let name: String
     var ideas: [Idea]
     let color: String
     
+//    init(id: UUID = UUID(), name: String, ideas: [Idea], color: String) {
+//        self.id = id
+//        self.name = name
+//        self.ideas = ideas
+//        self.color = color
+//    }
 }
 
 extension Bucket {
-    static var emptyBucket = Bucket(name: "No Bucket", ideas: [], color: "white")
+    static var emptyBucket = Bucket(name: "No Bucket", ideas: [], color: DefaultValues.defaultColors)
 }
 
 extension Bucket {

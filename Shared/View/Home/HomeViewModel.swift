@@ -8,10 +8,17 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
-    @Published var clusterManager: NetworkManager
-    let clusters: [Cluster]
-    init(clusterManager: NetworkManager) {
-        self.clusterManager = clusterManager
-        self.clusters = clusterManager.getClusters()
+    @Published var dataManager: RootDataManager
+    @Published var clusters: [Cluster]
+    init(clusterManager: RootDataManager) {
+        self.dataManager = clusterManager
+        // currently setting it to empty because I have on appear calling fetch clusters
+        // should come up with a better way to read clusters only when necessary
+        self.clusters = []
+    }
+    
+    func fetchClusters() {
+        print("fetching clusters...")
+        self.clusters = dataManager.getClusters()
     }
 }
